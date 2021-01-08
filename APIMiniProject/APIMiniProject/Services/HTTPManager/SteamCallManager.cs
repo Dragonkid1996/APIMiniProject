@@ -1,5 +1,4 @@
-﻿using System;
-using RestSharp;
+﻿using RestSharp;
 
 namespace APIMiniProject
 {
@@ -12,20 +11,16 @@ namespace APIMiniProject
             _client = new RestClient(SteamConfigReader.BaseUrl);
         }
 
-        public string GetAchievements()
+        public string GetNews()
         {
-            string interfaceName = "ISteamUser";
-            string methodName = "GetGlobalAchievementPercentagesForApp";
+            string interfaceName = "ISteamNews";
+            string methodName = "GetNewsForApp";
             string version = "v0002";
 
-            var request = new RestRequest($"{interfaceName}/{methodName}/{version}/?gameid=440&format=json");
+            var request = new RestRequest($"{interfaceName}/{methodName}/{version}/?appid=648350&count=3&maxlength=300&format=json");
             var response = _client.Execute(request, Method.GET);
+            System.Console.WriteLine(response.Content);
             return response.Content;
-        }
-
-        internal string GetLatestAchievements()
-        {
-            throw new NotImplementedException();
         }
     }
 }

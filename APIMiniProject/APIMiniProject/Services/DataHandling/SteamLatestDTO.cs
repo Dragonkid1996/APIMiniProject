@@ -5,11 +5,11 @@ namespace APIMiniProject
 {
     public class SteamLatestDTO
     {
-        public LatestAchievementsRoot LatestAchievements { get; set; }
+        public LatestNewsRoot LatestNews { get; set; }
 
-        internal void DeserializeAchievements(string liveAchievements)
+        internal void DeserializeNews(string liveNews)
         {
-            LatestAchievements = JsonConvert.DeserializeObject<LatestAchievementsRoot>(liveAchievements);
+            LatestNews = JsonConvert.DeserializeObject<LatestNewsRoot>(liveNews);
         }
     }
 }

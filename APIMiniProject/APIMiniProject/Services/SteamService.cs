@@ -8,14 +8,14 @@ namespace APIMiniProject
     {
         public SteamCallManager SteamCallManager { get; set; } = new SteamCallManager();
         public SteamLatestDTO SteamLatestDTO { get; set; } = new SteamLatestDTO();
-        public string LiveAchievements { get; set; }
-        public JObject Json_Achievements { get; set; }
+        public string LiveNews { get; set; }
+        public JObject Json_News { get; set; }
 
         public SteamService()
         {
-            LiveAchievements = SteamCallManager.GetLatestAchievements();
-            Json_Achievements = JsonConvert.DeserializeObject<JObject>(LiveAchievements);
-            SteamLatestDTO.DeserializeAchievements(LiveAchievements);
+            LiveNews = SteamCallManager.GetNews();
+            Json_News = JsonConvert.DeserializeObject<JObject>(LiveNews);
+            SteamLatestDTO.DeserializeNews(LiveNews);
         }
     }
 }
