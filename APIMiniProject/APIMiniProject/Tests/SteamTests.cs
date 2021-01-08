@@ -7,9 +7,9 @@ namespace APIMiniProject
         private SteamService _steamService = new SteamService();
 
         [Test]
-        public void WebCallSuccessCheck()
+        public void CorrectGameReturned()
         {
-            Assert.That(_steamService.SteamLatestDTO.LatestAchievements.success);
+            Assert.That(_steamService.SteamLatestDTO.LatestNews.appnews.appid, Is.EqualTo("648350"));
         }
     }
 }
