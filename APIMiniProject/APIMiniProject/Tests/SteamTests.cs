@@ -9,7 +9,7 @@ namespace APIMiniProject
         [Test]
         public void CorrectGameReturned()
         {
-            Assert.That(_steamService.SteamLatestDTO.LatestNews.appnews.appid, Is.EqualTo("648350"));
+            Assert.That(_steamService.SteamLatestDTO.LatestNews.appnews.appid, Is.EqualTo(648350));
         }
     }
 }
