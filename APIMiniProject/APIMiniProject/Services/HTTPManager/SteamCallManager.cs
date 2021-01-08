@@ -27,5 +27,15 @@ namespace APIMiniProject
         {
             throw new NotImplementedException();
         }
+
+        public string GetNews() {
+            string version = "v0002";
+            string methodName = "GetNewsForApp";
+            string interfaceName = "ISteamNews";
+
+            var request = new RestRequest($"{interfaceName}/{methodName}/{version}/?appid=648350&count=3&maxlength=300&format=json");
+            var response = _client.Execute(request, Method.GET);
+            return response.Content;
+        }
     }
 }
