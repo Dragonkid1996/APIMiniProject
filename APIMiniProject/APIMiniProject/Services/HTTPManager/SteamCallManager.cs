@@ -17,9 +17,8 @@ namespace APIMiniProject
             string methodName = "GetNewsForApp";
             string version = "v0002";
 
-            var request = new RestRequest($"{interfaceName}/{methodName}/{version}/?appid=648350&count=3&maxlength=300&format=json");
+            var request = new RestRequest($"{interfaceName}/{methodName}/{version}/?appid=648350&count=1&maxlength=300&format=json");
             var response = _client.Execute(request, Method.GET);
-            System.Console.WriteLine(response.Content);
             return response.Content;
         }
     }
