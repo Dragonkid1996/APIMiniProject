@@ -6,13 +6,13 @@ The aim of this project is to create an API testing framework for Valve's ISteam
 
 ## Class Diagram
 
-![image](https://github.com/Dragonkid1996/APIMiniProject/tree/Dom/Project%20Images/ClassDiagram.png)
+![image](https://github.com/Dragonkid1996/APIMiniProject/blob/Dom/Project%20Images/ClassDiagram.png)
 
 ## Sprint Breakdowns
 
 ### Sprint 1 - Friday 8th January 2021
 
-![image](https://github.com/Dragonkid1996/APIMiniProject/tree/Dom/Project%20Images/ProjectSprint1.PNG)
+![image](https://github.com/Dragonkid1996/APIMiniProject/blob/Dom/Project%20Images/BoardSprint1.PNG)
 
 
 
@@ -37,6 +37,6 @@ The sprint went relatively smoothly, with all user stories in the sprint backlog
 
 ### Sprint 2 - Saturday 9th January 2021
 
-![image](https://github.com/Dragonkid1996/APIMiniProject/tree/Dom/Project%20Images/ProjectSprint2.PNG)
+![image](https://github.com/Dragonkid1996/APIMiniProject/blob/Dom/Project%20Images/BoardSprint2.PNG)
 
 By the end of the second sprint, we aim to have all tests produced for the API, which includes building on the base framework created in the last sprint to create methods to test further functionality of the API.
