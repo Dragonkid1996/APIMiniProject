@@ -24,5 +24,12 @@ namespace APIMiniProject
             //Json_News = JsonConvert.DeserializeObject<JObject>(LiveNews);
             steamLatestDTO.DeserializeNews(LiveNews);
         }
+        
+        public string unixToNormalDate(int epoch)
+        {
+            return new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc).AddSeconds(epoch).ToShortDateString();
+        }
+
+
     }
 }
