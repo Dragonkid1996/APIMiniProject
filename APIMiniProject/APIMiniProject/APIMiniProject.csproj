@@ -83,8 +83,8 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Services\DataHandling\LatestAchievementsModel.cs" />
-    <Compile Include="Services\DataHandling\SteamLatestDTO.cs" />
+    <Compile Include="Services\DataHandling\LatestNewsModel.cs" />
+    <Compile Include="Services\DataHandling\SteamLatestNewsDTO.cs" />
     <Compile Include="Services\HTTPManager\SteamCallManager.cs" />
     <Compile Include="Services\SteamService.cs" />
     <Compile Include="SteamConfigReader.cs" />
