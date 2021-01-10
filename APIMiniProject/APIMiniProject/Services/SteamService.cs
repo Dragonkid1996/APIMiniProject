@@ -17,5 +17,20 @@ namespace APIMiniProject
             Json_News = JsonConvert.DeserializeObject<JObject>(LiveNews);
             SteamLatestDTO.DeserializeNews(LiveNews);
         }
+
+        public int CountContentCharacters()
+        {
+            return Json_News["appnews"]["newsitems"][1]["contents"].ToString().Length;
+        }
+
+        public int CountNumberOfArticles()
+        {
+            var count = 0;
+            foreach (var item in Json_News["appnews"]["newsitems"])
+            {
+                count += 1;
+            }
+            return count;
+        }
     }
 }
