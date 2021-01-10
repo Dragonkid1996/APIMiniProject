@@ -1,4 +1,4 @@
-﻿using NUnit.Framework;
+using NUnit.Framework;
 
 namespace APIMiniProject
 {
@@ -13,6 +13,27 @@ namespace APIMiniProject
         }
 
         [Test]
+        public void CorrectAuthorReturned()
+        {
+            Assert.That(_steamService.SteamLatestDTO.LatestNews.appnews.newsitems[0].author, Is.EqualTo("contact@rockpapershotgun.com (Lauren Morton)"));
+        }
+
+        [Test]
+        public void CorrectDateReturned()
+        {
+            Assert.That(_steamService.unixToNormalDate(_steamService.SteamLatestDTO.LatestNews.appnews.newsitems[0].date), Is.EqualTo("1/4/2021"));
+        }
+        [Test]
+        public void AppIDRemainsTheSameForNewsArticles()
+        {
+            Assert.That(_steamService.SteamLatestDTO.LatestNews.appnews.appid, Is.EqualTo(_steamService.SteamLatestDTO.LatestNews.appnews.newsitems[0].appid));
+        }
+
+        [Test]
+        public void NumberOfNewsArticles()
+        {
+            Assert.That(_steamService.LiveNews.Length, Is.EqualTo(847));
+
         public void CountContentCharactersTest()
         {
             ///380 because the 300 max characters in parameters of API call is without hyperlink tag

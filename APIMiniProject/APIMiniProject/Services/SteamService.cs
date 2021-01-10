@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
@@ -9,6 +9,7 @@ namespace APIMiniProject
         public SteamCallManager SteamCallManager { get; set; } = new SteamCallManager();
         public SteamLatestDTO SteamLatestDTO { get; set; } = new SteamLatestDTO();
         public string LiveNews { get; set; }
+
         public JObject Json_News { get; set; }
 
         public SteamService()
@@ -16,6 +17,11 @@ namespace APIMiniProject
             LiveNews = SteamCallManager.GetNews();
             Json_News = JsonConvert.DeserializeObject<JObject>(LiveNews);
             SteamLatestDTO.DeserializeNews(LiveNews);
+        }
+        
+        public string unixToNormalDate(int epoch)
+        {
+            return new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc).AddSeconds(epoch).ToShortDateString();
         }
 
         public int CountContentCharacters()

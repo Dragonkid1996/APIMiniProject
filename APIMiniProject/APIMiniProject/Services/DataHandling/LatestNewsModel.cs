@@ -1,4 +1,4 @@
-﻿namespace APIMiniProject
+namespace APIMiniProject
 {
     public class LatestNewsRoot
     {
@@ -26,5 +26,4 @@
         public int feed_type { get; set; }
         public int appid { get; set; }
     }
-
 }
