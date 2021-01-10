@@ -21,7 +21,7 @@ namespace APIMiniProject
         [Test]
         public void CorrectDateReturned()
         {
-            Assert.That(_steamService.unixToNormalDate(_steamService.SteamLatestDTO.LatestNews.appnews.newsitems[0].date), Is.EqualTo("1/4/2021"));
+            Assert.That(_steamService.unixToNormalDate(_steamService.SteamLatestDTO.LatestNews.appnews.newsitems[0].date), Is.EqualTo("04/01/2021"));
         }
         [Test]
         public void AppIDRemainsTheSameForNewsArticles()
@@ -32,7 +32,8 @@ namespace APIMiniProject
         [Test]
         public void NumberOfNewsArticles()
         {
-            Assert.That(_steamService.LiveNews.Length, Is.EqualTo(847));
+            Assert.That(_steamService.LiveNews.Length, Is.EqualTo(2495));
+        }
 
         public void CountContentCharactersTest()
         {
@@ -47,7 +48,7 @@ namespace APIMiniProject
         }
 
         [Test]
-        public void GameIDIsInURLOfPost()
+        public void ArticleIDIsInURLOfPost()
         {
             Assert.That(_steamService.Json_News["appnews"]["newsitems"][0]["url"].ToString(),
                 Does.Contain(_steamService.Json_News["appnews"]["newsitems"][0]["gid"].ToString()));
