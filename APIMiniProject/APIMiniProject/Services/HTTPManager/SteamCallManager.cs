@@ -1,8 +1,3 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using RestSharp;
 
 namespace APIMiniProject
@@ -15,10 +10,11 @@ namespace APIMiniProject
         {
             _client = new RestClient(SteamConfigReader.BaseUrl);
         }
-        
+
+
         public string GetNews()
         {
-            string interfaceName = "ISteamUser";
+            string interfaceName = "ISteamNews";
             string methodName = "GetNewsForApp";
             string version = "v0002";
 

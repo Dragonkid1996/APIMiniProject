@@ -1,4 +1,4 @@
-﻿using NUnit.Framework;
+using NUnit.Framework;
 
 namespace APIMiniProject
 {
@@ -33,6 +33,24 @@ namespace APIMiniProject
         public void NumberOfNewsArticles()
         {
             Assert.That(_steamService.LiveNews.Length, Is.EqualTo(847));
+
+        public void CountContentCharactersTest()
+        {
+            ///380 because the 300 max characters in parameters of API call is without hyperlink tag
+            Assert.That(_steamService.CountContentCharacters(), Is.EqualTo(380));
+        }
+
+        [Test]
+        public void NumberOfArticlesIsSameAsSpecified()
+        {
+            Assert.That(_steamService.CountNumberOfArticles(), Is.EqualTo(3));
+        }
+
+        [Test]
+        public void GameIDIsInURLOfPost()
+        {
+            Assert.That(_steamService.Json_News["appnews"]["newsitems"][0]["url"].ToString(),
+                Does.Contain(_steamService.Json_News["appnews"]["newsitems"][0]["gid"].ToString()));
         }
     }
 }
